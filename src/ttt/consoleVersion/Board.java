@@ -5,8 +5,8 @@ public class Board {
   /** An array of Cell objects to set up the game board */
   protected Cell[][] gameBoard;
   /** Standard constants */
-  public static final int BOARD_ROWS = 3;
-  public static final int BOARD_COLUMNS = 3;
+  public static final int BOARD_ROWS = Config.BOARD_ROWS;
+  public static final int BOARD_COLUMNS = Config.BOARD_COLUMNS;
   /** Last played row and column. They will help while checking for the thriving victor */
   public int lastPlayedRow;
   public int lastPlayedColumn;
@@ -36,7 +36,7 @@ public class Board {
 
   /**
    * This method returns the number of occupied cells
-   * 
+   *
    * @return
    */
   public int getUsedCellsCount() {
@@ -52,7 +52,7 @@ public class Board {
 
   /**
    * Check if the game ended in a draw. Specifically , check if there are no empty cells left.
-   * 
+   *
    * @return
    */
   public boolean checkForDraw() {
@@ -70,7 +70,7 @@ public class Board {
    * c | | | c | | | c --------- --------- --------- --------- --------- -------- --------- --------
    * | | c | c | c | | | c | | c | c | | | c | | | c --------- --------- --------- ---------
    * --------- -------- --------- -------- | | | | c | c | c c | | | | c c | | | c | | | c
-   * 
+   *
    * @param content
    */
   public boolean checkForWinner(Content content) {
