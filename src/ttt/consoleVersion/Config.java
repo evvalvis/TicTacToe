@@ -14,7 +14,7 @@ public class Config {
 
   /**
    * This method loads the config properties file
-   * 
+   *
    * @param file
    */
   public void load(String file) {
@@ -24,14 +24,14 @@ public class Config {
     try {
       if (inputStream != null) {
         properties.load(inputStream);
+        BOARD_ROWS = Integer.parseInt(properties.getProperty("rows"));
+        BOARD_COLUMNS = Integer.parseInt(properties.getProperty("columns"));
+        ENABLE_BOT = Boolean.parseBoolean(properties.getProperty("enable_bot"));
       } else {
         throw new FileNotFoundException("property file '" + file + "' not found in the classpath");
       }
     } catch (IOException io) {
       io.printStackTrace();
     }
-    BOARD_ROWS = Integer.parseInt(properties.getProperty("rows"));
-    BOARD_COLUMNS = Integer.parseInt(properties.getProperty("columns"));
-    ENABLE_BOT = Boolean.parseBoolean(properties.getProperty("enable_bot"));
   }
 }
